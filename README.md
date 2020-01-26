@@ -31,3 +31,5 @@ https://fierce-lowlands-35937.herokuapp.com/
 * Exception Handling
 
 * Test suite
+
+* Add modal for sessions and registrations
