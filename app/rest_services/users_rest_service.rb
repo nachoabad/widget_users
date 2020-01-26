@@ -4,7 +4,7 @@ class UsersRestService < BaseRestService
   private
 
     def url_path
-      super + USERS_PATH + @path + client_params
+      super + USERS_PATH + @path
     end
 
     def payload
