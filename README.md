@@ -1,24 +1,33 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## LIVE DEMO
 
-Things you may want to cover:
+https://fierce-lowlands-35937.herokuapp.com/
 
-* Ruby version
+## RUN THE APP
 
-* System dependencies
+* Install ruby 2.6.5
 
-* Configuration
+* Clone the repo on your local machine
 
-* Database creation
+* Run `bundle install`
 
-* Database initialization
+* API are Client ID and Secret ID are encripted. Please use `EDITOR=vim rails credentials:edit` to update
 
-* How to run the test suite
+* No Database is required
 
-* Services (job queues, cache servers, search engines, etc.)
+* Deploy on Heroku following: https://devcenter.heroku.com/articles/getting-started-with-rails5
 
-* Deployment instructions
+* Set your master key in `heroku config:set RAILS_MASTER_KEY=<your-master-key>`
 
-* ...
+## TODOS
+
+* Add update and delete widgets functionality
+
+* Prevalidate email availability on Sign Up
+
+* Input validatios
+
+* Exception Handling
+
+* Test suite
