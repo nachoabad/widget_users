@@ -16,7 +16,6 @@ class BaseRestService
   end
 
   def post
-    byebug
     RestClient.post url_path, payload, @headers.merge({'Content-Type': 'application/json'})
   end
 

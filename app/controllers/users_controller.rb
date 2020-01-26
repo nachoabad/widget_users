@@ -1,11 +1,25 @@
 class UsersController < ApplicationController
+  include SessionsHelper
+
+  before_action :authenticate_user!, except: [:new, :create]
+
+  def show
+    args = { path: params[:id], token: session[:access_token] }
+    response = UsersRestService.new(args).get
+    @user = UserParserService.parse(response)
+
+    args = { path: params[:id] + '/widgets?term=visible', token: session[:access_token] }
+    response = UsersRestService.new(args).get
+    @widgets = WidgetsParserService.parse(response)
+  end
+
   def new
     @user = User.new
   end
 
   def create
     begin
-      response = UsersRestClientService.new(params: safe_params.to_h).post
+      response = UsersRestService.new(params: safe_params.to_h).post
       log_in JSON.parse(response.body)
       redirect_to widgets_path
     rescue

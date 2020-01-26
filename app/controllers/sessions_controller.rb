@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     session_params = safe_params.to_h.merge({'grant_type': 'password'})
     
     begin
-      response = SessionsRestClientService.new(path: 'token', params: session_params).post
+      response = SessionsRestService.new(path: 'token', params: session_params).post
       log_in JSON.parse(response.body)
       redirect_to my_widgets_path
     rescue

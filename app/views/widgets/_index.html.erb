@@ -1,0 +1,24 @@
+<% if widgets.present? %>
+  <table class="table mt-3">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Description</th>
+        <th scope="col">User</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% widgets.each do |widget| %>
+        <tr>
+          <td><%= widget.id %></th>
+          <td><%= widget.name %></td>
+          <td><%= widget.description %></td>
+          <td><%= link_to widget.user['name'], user_path(widget.user['id']) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p class='mt-3'>No widgets for this user</p>
+<% end %>
