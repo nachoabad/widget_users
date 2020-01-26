@@ -1,13 +1,13 @@
-class UsersRestService < BaseRestService
-  USERS_PATH = 'api/v1/users/'
+class WidgetsRestService < BaseRestService
+  WIDGETS_PATH = 'api/v1/widgets/'
 
   private
 
     def url_path
-      super + USERS_PATH + @path + client_params
+      super + WIDGETS_PATH + @path + client_params
     end
 
     def payload
-      super.merge({'user': @params})
+      super.merge({'widget': @params})
     end
 end

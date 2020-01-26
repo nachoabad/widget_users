@@ -12,7 +12,7 @@ class BaseRestService
   end
 
   def get
-    RestClient.get url_path, @headers
+    RestClient.get url_path + client_params, @headers
   end
 
   def post
