@@ -21,7 +21,7 @@ class UsersController < ApplicationController
     begin
       response = UsersRestService.new(params: safe_params.to_h).post
       log_in JSON.parse(response.body)
-      redirect_to widgets_path
+      redirect_to my_widgets_path
     rescue
       flash[:danger] = 'Error message'
       render 'new'
