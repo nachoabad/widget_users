@@ -1,0 +1,8 @@
+<div class="container my-2">
+  <% flash.each do |type, msg| %>
+    <div class="alert alert-warning alert-dismissable fade show">
+      <%= msg %>
+      <button class="close" data-dismiss="alert">x</button>
+    </div>
+  <% end %> 
+</div>
